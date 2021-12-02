@@ -1,6 +1,7 @@
+import react, {useState, useEffect} from 'react';
 import './App.css';
 import {API} from './api.js'
-import react, {useState, useEffect} from 'react';
+import Card from './Components/Card';
 
 
 function App() {
@@ -28,9 +29,8 @@ function App() {
   return (
     <>
       {githubUsers.map((user) => {
-        return <h2 key={user.login}>{user.login}</h2>
+        return <Card reversed/>
       })}
-    
     </>
   );
 }
