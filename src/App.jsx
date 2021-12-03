@@ -1,7 +1,9 @@
 import react, {useState, useEffect} from 'react';
 import './App.css';
-import {API} from './api.js'
+import { API } from './api.js'
+
 import Card from './Components/Card';
+import Header from './Components/Header';
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
 
   return (
     <>
+      <Header />
       {githubUsers.map((user) => {
         return <Card reversed/>
       })}
