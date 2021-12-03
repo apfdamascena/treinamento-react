@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      {githubUsers.map((user) => {
-        return <Card reversed/>
+      {githubUsers.slice(0,1).map((user) => {
+        return <Card reversed name={user.name} bio = {user.bio} photo={user.avatar_url} />
       })}
     </>
   );
