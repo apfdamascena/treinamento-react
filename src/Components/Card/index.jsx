@@ -1,10 +1,18 @@
-import react from 'react'
+import react, { useEffect } from 'react'
 import './styles.css';
 
 import { ReactComponent as IconLinkedin } from '../../assets/Linkedin.svg';
 import { ReactComponent as IconGithub } from '../../assets/icongithub.svg';
 
-export default function Card({ reversed, name, bio, photo }) {
+export default function Card({name, bio, photo, login }) {
+
+    function openGithubOfUser() {
+        const url = `https://github.com/${login}`
+        window.open(url);
+    }
+    useEffect(() => {
+        console.log(login);
+    })
 
     return (
 
@@ -18,8 +26,9 @@ export default function Card({ reversed, name, bio, photo }) {
                         <p>{bio}</p>
                         
                         <div className="icons">
-                            <IconLinkedin id="iconSize"/>
-                            <IconGithub id="iconSize" />
+                            <IconGithub id="iconSize" onClick = { () =>  {
+                                openGithubOfUser();
+                            }}/>
                         </div>
                         
                     </div>

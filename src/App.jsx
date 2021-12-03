@@ -35,8 +35,7 @@ function App() {
       <Header/>
       
       {githubUsers.map((user, index) => {
-        return <Card reversed
-        name={user.name} bio = {user.bio} photo={user.avatar_url} />
+        return <Card name={user.name} bio = {user.bio} photo={user.avatar_url} login= {user.login} />
       })}
 
       <Footer/>
