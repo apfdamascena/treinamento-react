@@ -4,6 +4,7 @@ import { API } from './api.js'
 
 import Card from './Components/Card';
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
 
   async function getDataFromGithub() {
 
-    const users = ['phsb5321', 'Juliana-serafim', 'apfdamascena']; 
+    const users = ['apfdamascena', 'Juliana-serafim', 'phsb5321']; 
     const receivedFromGithub = [];
 
     for(const user of users){
@@ -33,9 +34,13 @@ function App() {
 
       <Header/>
       
-      {githubUsers.slice(0,1).map((user) => {
-        return <Card reversed name={user.name} bio = {user.bio} photo={user.avatar_url} />
+      {githubUsers.map((user, index) => {
+        return <Card reversed
+        name={user.name} bio = {user.bio} photo={user.avatar_url} />
       })}
+
+      <Footer/>
+
     </>
   );
 }

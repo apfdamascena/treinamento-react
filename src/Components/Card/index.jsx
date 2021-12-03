@@ -1,6 +1,9 @@
 import react from 'react'
 import './styles.css';
 
+import { ReactComponent as IconLinkedin } from '../../assets/Linkedin.svg';
+import { ReactComponent as IconGithub } from '../../assets/icongithub.svg';
+
 export default function Card({ reversed, name, bio, photo }) {
 
     return (
@@ -8,37 +11,21 @@ export default function Card({ reversed, name, bio, photo }) {
         <div className="card-container">
 
             <div className="card-content">
-                {reversed ?
+                <div className="inline-content">
+                    <div className="card-text">
 
-                    <div className= "inline-content">
-                        <div className="card-text">
-
-                            <h2>Oie, Eu sou {name},</h2>
-                            <h2>{bio}</h2>
-
-                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-
-                            <button>Testando</button>
+                        <h2>Oie, Eu sou {name}, Software Engineer</h2>
+                        <p>{bio}</p>
+                        
+                        <div className="icons">
+                            <IconLinkedin id="iconSize"/>
+                            <IconGithub id="iconSize" />
                         </div>
-
-                        <img src={photo} alt={`Foto de ${name}.`} />
+                        
                     </div>
-                    :
-                    <div className="inline-content">
-                        <img src={photo} alt={`Foto de ${name}.`} />
 
-                        <div className="card-text">
-
-                            <h2>Oie, Eu sou {name},</h2>
-                            <h2>{bio}</h2>
-
-                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-
-                            <button>Testando</button>
-                        </div>
-
-                    </div>
-                }
+                    <img src={photo} alt={`Foto de ${name}.`} />
+                </div>
             </div>
         </div>
     );
